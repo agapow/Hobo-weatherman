@@ -9358,3 +9358,503 @@ Rendering biosequences/show
   [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bioseqcollections" INNER JOIN "bioseqcollection_biosequences" ON "bioseqcollections".id = "bioseqcollection_biosequences".bioseqcollection_id WHERE (("bioseqcollection_biosequences".biosequence_id = 3)) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "bioseqcollections" INNER JOIN "bioseqcollection_biosequences" ON "bioseqcollections".id = "bioseqcollection_biosequences".bioseqcollection_id WHERE (("bioseqcollection_biosequences".biosequence_id = 3)) [0m
 Completed in 757ms (View: 739, DB: 32) | 200 OK [http://158.119.147.40/biosequences/3]
+  [4;36;1mSQL (5.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing FrontController#index (for 158.119.175.40 at 2010-06-25 16:30:55) [GET]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering front/index
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/core.dryml in 0.03s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_core.dryml in 0.28s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_support.dryml in 0.02s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_document_tags.dryml in 0.15s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_pages.dryml in 0.28s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_editing.dryml in 0.09s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_forms.dryml in 0.48s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_navigation.dryml in 0.17s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_plus.dryml in 0.11s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_generics.dryml in 0.15s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_lifecycles.dryml in 0.01s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_summary.dryml in 0.14s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid_user_pages.dryml in 0.40s
+  DRYML: Compiled /home/f0/paul/.gem/ruby/1.8/gems/hobo-1.0.1/taglibs/rapid.dryml in 2.31s
+  DRYML: Compiled app/views/taglibs/auto/rapid/cards.dryml in 0.09s
+  DRYML: Compiled app/views/taglibs/auto/rapid/pages.dryml in 1.45s
+  DRYML: Compiled app/views/taglibs/auto/rapid/forms.dryml in 0.12s
+  DRYML: Compiled app/views/taglibs/themes/clean/clean.dryml in 0.02s
+  DRYML: Compiled app/views/taglibs/application.dryml in 4.16s
+  DRYML: Compiled app/views/front/index.dryml in 4.24s
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" LIMIT 30[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+Completed in 4491ms (View: 4477, DB: 21) | 200 OK [http://158.119.147.40/]
+  [4;35;1mSQL (5.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BiosequencesController#index (for 158.119.175.40 at 2010-06-25 16:31:32) [GET]
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBiosequence Load (2.3ms)[0m   [0;1mSELECT * FROM "biosequences" LIMIT 30 OFFSET 0[0m
+Rendering biosequences/index
+  DRYML: Compiled app/views/biosequences/index.dryml in 0.63s
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" LIMIT 30[0m
+Completed in 779ms (View: 763, DB: 28) | 200 OK [http://158.119.147.40/biosequences]
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BiosequencesController#show (for 158.119.175.40 at 2010-06-25 16:31:48) [GET]
+  Parameters: {"id"=>"2-dhgfjhgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgf"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBiosequence Load (1.8ms)[0m   [0mSELECT * FROM "biosequences" WHERE ("biosequences"."id" = 2) [0m
+Rendering biosequences/show
+  DRYML: Compiled app/views/biosequences/show.dryml in 0.37s
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT count(*) AS count_all FROM "bioseqfeatures" WHERE ("bioseqfeatures".biosequence_id = 2) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "bioseqcollections" INNER JOIN "bioseqcollection_biosequences" ON "bioseqcollections".id = "bioseqcollection_biosequences".bioseqcollection_id WHERE (("bioseqcollection_biosequences".biosequence_id = 2)) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "bioseqcollections" INNER JOIN "bioseqcollection_biosequences" ON "bioseqcollections".id = "bioseqcollection_biosequences".bioseqcollection_id WHERE (("bioseqcollection_biosequences".biosequence_id = 2)) [0m
+Completed in 751ms (View: 732, DB: 32) | 200 OK [http://158.119.147.40/biosequences/2-dhgfjhgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgf]
+  [4;36;1mSQL (5.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BiosequencesController#edit (for 158.119.175.40 at 2010-06-25 16:32:00) [GET]
+  Parameters: {"id"=>"2-dhgfjhgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgf"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBiosequence Load (1.9ms)[0m   [0mSELECT * FROM "biosequences" WHERE ("biosequences"."id" = 2) [0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30[0m
+Completed in 793ms (View: 778, DB: 28) | 200 OK [http://158.119.147.40/biosequences/2-dhgfjhgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgf/edit]
+  [4;35;1mSQL (5.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BiosequencesController#destroy (for 158.119.175.40 at 2010-06-25 16:32:07) [DELETE]
+  Parameters: {"authenticity_token"=>"jW1a6axwXYTVL4EIrp+h33dqOe6hU4kPnJcAcA6Rg/U=", "id"=>"2-dhgfjhgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgf"}
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBiosequence Load (1.9ms)[0m   [0;1mSELECT * FROM "biosequences" WHERE ("biosequences"."id" = 2) [0m
+  [4;35;1mBioseqcollectionBiosequence Load (1.7ms)[0m   [0mSELECT * FROM "bioseqcollection_biosequences" WHERE ("bioseqcollection_biosequences".biosequence_id = 2) [0m
+  [4;36;1mBiosequence Destroy (3.5ms)[0m   [0;1mDELETE FROM "biosequences" WHERE "id" = 2[0m
+Redirected to http://158.119.147.40:8080/biosequences
+Completed in 63ms (DB: 31) | 302 Found [http://158.119.147.40/biosequences/2-dhgfjhgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgf]
+  [4;35;1mSQL (5.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BiosequencesController#index (for 158.119.175.40 at 2010-06-25 16:32:08) [GET]
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBiosequence Load (2.0ms)[0m   [0;1mSELECT * FROM "biosequences" LIMIT 30 OFFSET 0[0m
+Rendering biosequences/index
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" LIMIT 30[0m
+Completed in 756ms (View: 740, DB: 28) | 200 OK [http://158.119.147.40/biosequences]
+  [4;36;1mSQL (6.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing BiosequencesController#index (for 158.119.175.40 at 2010-06-25 16:34:46) [GET]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBiosequence Load (2.2ms)[0m   [0mSELECT * FROM "biosequences" LIMIT 30 OFFSET 0[0m
+Rendering biosequences/index
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" LIMIT 30[0m
+
+ActionView::TemplateError (undefined local variable or method `allow_write_record' for #<Biosequence:0xb60b4f80>) on line #1 of app/views/biosequences/index.dryml:
+1: <index-page> 
+2: 	<collection: replace> 
+3: 		<div> 
+4: 			<table-plus fields="this, identifier,title"/> 
+
+    hobo (1.0.1) lib/hobo/find_for.rb:48:in `method_missing'
+    app/models/biosequence.rb:29:in `create_permitted?'
+    hobo (1.0.1) lib/hobo/permissions.rb:207:in `creatable_by?'
+    hobo (1.0.1) lib/hobo/permissions.rb:171:in `with_acting_user'
+    hobo (1.0.1) lib/hobo/permissions.rb:207:in `creatable_by?'
+    hobo (1.0.1) lib/hobo/hobo_helper.rb:235:in `can_create?'
+    hobo (1.0.1) taglibs/rapid_core.dryml:346:in `a'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/rapid_core.dryml:325:in `a'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:464:in `send'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:464:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:427:in `call_tag_parameter'
+    app/views/taglibs/auto/rapid/pages.dryml:282:in `index_page__for_biosequence'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    app/views/taglibs/auto/rapid/pages.dryml:281:in `index_page__for_biosequence'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:457:in `call'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:457:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/tag_parameters.rb:21:in `call'
+    hobo (1.0.1) lib/hobo/dryml/tag_parameters.rb:21:in `method_missing'
+    hobo (1.0.1) taglibs/rapid_document_tags.dryml:21:in `section'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/rapid_document_tags.dryml:20:in `section'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:464:in `send'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:464:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:427:in `call_tag_parameter'
+    app/views/taglibs/auto/rapid/pages.dryml:281:in `index_page__for_biosequence'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    app/views/taglibs/auto/rapid/pages.dryml:266:in `index_page__for_biosequence'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:455:in `call'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:455:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/tag_parameters.rb:21:in `call'
+    hobo (1.0.1) lib/hobo/dryml/tag_parameters.rb:21:in `method_missing'
+    hobo (1.0.1) taglibs/rapid_document_tags.dryml:21:in `section'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/rapid_document_tags.dryml:20:in `section'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:464:in `send'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:464:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:427:in `call_tag_parameter'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:46:in `page_without_aaa82d3a9ca5'
+    hobo (1.0.1) lib/hobo/dryml/scoped_variables.rb:20:in `new_scope'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:38:in `page_without_aaa82d3a9ca5'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:37:in `page_without_aaa82d3a9ca5'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:447:in `call'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:447:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:447:in `override_and_call_tag'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:427:in `call_tag_parameter'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:37:in `page_without_aaa82d3a9ca5'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:16:in `page_without_aaa82d3a9ca5'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:377:in `call'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:377:in `call_tag_parameter_with_default_content'
+    hobo (1.0.1) lib/hobo/dryml/tag_parameters.rb:21:in `call'
+    hobo (1.0.1) lib/hobo/dryml/tag_parameters.rb:21:in `method_missing'
+    hobo (1.0.1) taglibs/core.dryml:55:in `do_'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/core.dryml:55:in `do_'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:381:in `send'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:381:in `call_tag_parameter_with_default_content'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:403:in `call_tag_parameter'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:165:in `html'
+    hobo (1.0.1) lib/hobo/dryml/scoped_variables.rb:20:in `new_scope'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:165:in `html'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:160:in `html'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:16:in `page_without_aaa82d3a9ca5'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:14:in `page_without_aaa82d3a9ca5'
+    app/views/taglibs/themes/clean/clean.dryml:2:in `page'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    app/views/taglibs/themes/clean/clean.dryml:1:in `page'
+    app/views/taglibs/auto/rapid/pages.dryml:263:in `index_page__for_biosequence'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    app/views/taglibs/auto/rapid/pages.dryml:262:in `index_page__for_biosequence'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:200:in `send'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:200:in `call_polymorphic_tag'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:70:in `index_page'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:328:in `_tag_context'
+    hobo (1.0.1) taglibs/rapid_pages.dryml:67:in `index_page'
+    app/views/biosequences/index.dryml:1:in `render_page'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:267:in `new_object_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:248:in `new_context'
+    hobo (1.0.1) lib/hobo/dryml/template_environment.rb:255:in `new_object_context'
+    app/views/biosequences/index.dryml:1:in `render_page'
+    hobo (1.0.1) lib/hobo/dryml/template_handler.rb:22:in `render_for_rails22'
+    hobo (1.0.1) lib/hobo/dryml/template_handler.rb:142:in `render_dryml'
+    hobo (1.0.1) lib/hobo/dryml/template_handler.rb:138:in `render_dryml'
+    hobo (1.0.1) lib/hobo/dryml/template_handler.rb:106:in `render'
+    hobo (1.0.1) lib/hobo/dryml/template_handler.rb:83:in `render_for_file'
+    hobo (1.0.1) lib/hobo/model_controller.rb:818:in `render'
+    hobo (1.0.1) lib/hobo/controller.rb:23:in `call'
+    hobo (1.0.1) lib/hobo/controller.rb:23:in `included_in_class'
+
+Rendered rescues/_trace (360.2ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
