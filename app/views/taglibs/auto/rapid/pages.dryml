@@ -5,10 +5,375 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Bioseqcollection"><ht key="bioseqcollections.nav_item">Bioseq collections</ht></nav-item>
+    <nav-item with="&Bioseqfeature"><ht key="bioseqfeatures.nav_item">Bioseqfeatures</ht></nav-item>
+    <nav-item with="&Biosequence"><ht key="biosequences.nav_item">Biosequences</ht></nav-item>
     <nav-item with="&Contact"><ht key="contacts.nav_item">Contacts</ht></nav-item>
     <nav-item with="&Isolate"><ht key="isolates.nav_item">Isolates</ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Bioseqcollection Pages ====== -->
+
+<def tag="index-page" for="Bioseqcollection">
+  <page merge title="#{ht 'bioseqcollections.index.title', :default=>['Bioseq collections'] }">
+    <body: class="index-page bioseqcollection" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="bioseqcollections.index.heading">
+            Bioseq collections
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="bioseqcollections.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="bioseqcollections.actions.new">New Bioseq collection</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Bioseqcollection">
+  <page merge title="#{ht 'bioseqcollections.new.title', :default=>[' New Bioseq collection'] }">
+    <body: class="new-page bioseqcollection" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="bioseqcollections.new.heading">
+            New Bioseq collection
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'bioseqcollections.actions.create', :default=>['Create Bioseq collection']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Bioseqcollection">
+  <page merge title="#{ht 'bioseqcollections.show.title', :default=>['Bioseq collection'] }">
+
+    <body: class="show-page bioseqcollection" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="bioseqcollections.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="bioseqcollections.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Bioseq collection
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="identifier, source" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Bioseqcollection">
+  <page merge title="#{ht 'bioseqcollections.edit.title', :default=>['Edit Bioseq collection'] }">
+
+    <body: class="edit-page bioseqcollection" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="bioseqcollections.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'bioseqcollections.actions.delete', :default=>['Remove This Bioseq collection']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Bioseqfeature Pages ====== -->
+
+<def tag="index-page" for="Bioseqfeature">
+  <page merge title="#{ht 'bioseqfeatures.index.title', :default=>['Bioseqfeatures'] }">
+    <body: class="index-page bioseqfeature" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="bioseqfeatures.index.heading">
+            Bioseqfeatures
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="bioseqfeatures.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="bioseqfeatures.actions.new">New Bioseqfeature</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Bioseqfeature">
+  <page merge title="#{ht 'bioseqfeatures.new.title', :default=>[' New Bioseqfeature'] }">
+    <body: class="new-page bioseqfeature" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="bioseqfeatures.new.heading">
+            New Bioseqfeature
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'bioseqfeatures.actions.create', :default=>['Create Bioseqfeature']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Bioseqfeature">
+  <page merge title="#{ht 'bioseqfeatures.show.title', :default=>['Bioseqfeature'] }">
+
+    <body: class="show-page bioseqfeature" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="bioseqfeatures.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="bioseqfeatures.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Bioseqfeature
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="value, start, stop, biosequence" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Bioseqfeature">
+  <page merge title="#{ht 'bioseqfeatures.edit.title', :default=>['Edit Bioseqfeature'] }">
+
+    <body: class="edit-page bioseqfeature" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="bioseqfeatures.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'bioseqfeatures.actions.delete', :default=>['Remove This Bioseqfeature']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Biosequence Pages ====== -->
+
+<def tag="index-page" for="Biosequence">
+  <page merge title="#{ht 'biosequences.index.title', :default=>['Biosequences'] }">
+    <body: class="index-page biosequence" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="biosequences.index.heading">
+            Biosequences
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="biosequences.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="biosequences.actions.new">New Biosequence</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Biosequence">
+  <page merge title="#{ht 'biosequences.new.title', :default=>[' New Biosequence'] }">
+    <body: class="new-page biosequence" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="biosequences.new.heading">
+            New Biosequence
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'biosequences.actions.create', :default=>['Create Biosequence']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Biosequence">
+  <page merge title="#{ht 'biosequences.show.title', :default=>['Biosequence'] }">
+
+    <body: class="show-page biosequence" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="biosequences.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="biosequences.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Biosequence
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="identifier, source, title, seqdata" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Biosequence">
+  <page merge title="#{ht 'biosequences.edit.title', :default=>['Edit Biosequence'] }">
+
+    <body: class="edit-page biosequence" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="biosequences.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'biosequences.actions.delete', :default=>['Remove This Biosequence']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
@@ -133,6 +498,127 @@
 
 
 
+<!-- ====== Isolatecollection Pages ====== -->
+
+<def tag="index-page" for="Isolatecollection">
+  <page merge title="#{ht 'isolatecollections.index.title', :default=>['Isolate collections'] }">
+    <body: class="index-page isolatecollection" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="isolatecollections.index.heading">
+            Isolate collections
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="isolatecollections.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="isolatecollections.actions.new">New Isolate collection</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Isolatecollection">
+  <page merge title="#{ht 'isolatecollections.new.title', :default=>[' New Isolate collection'] }">
+    <body: class="new-page isolatecollection" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="isolatecollections.new.heading">
+            New Isolate collection
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'isolatecollections.actions.create', :default=>['Create Isolate collection']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Isolatecollection">
+  <page merge title="#{ht 'isolatecollections.show.title', :default=>['Isolate collection'] }">
+
+    <body: class="show-page isolatecollection" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="isolatecollections.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="isolatecollections.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Isolate collection
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="identifier, source" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Isolatecollection">
+  <page merge title="#{ht 'isolatecollections.edit.title', :default=>['Edit Isolate collection'] }">
+
+    <body: class="edit-page isolatecollection" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="isolatecollections.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'isolatecollections.actions.delete', :default=>['Remove This Isolate collection']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
 <!-- ====== Isolate Pages ====== -->
 
 <def tag="index-page" for="Isolate">
@@ -219,7 +705,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="identifier, source, title" param/>
+            <field-list fields="identifier, source, title, serotype, host, country, region" param/>
           </section>
     </content:>
 

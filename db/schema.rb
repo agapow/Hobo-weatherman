@@ -9,7 +9,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100623114900) do
+ActiveRecord::Schema.define(:version => 20100625150433) do
+
+  create_table "bioseqcollection_biosequences", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "biosequence_id"
+    t.integer  "bioseqcollection_id"
+  end
+
+  add_index "bioseqcollection_biosequences", ["bioseqcollection_id"], :name => "index_bioseqcollection_biosequences_on_bioseqcollection_id"
+  add_index "bioseqcollection_biosequences", ["biosequence_id"], :name => "index_bioseqcollection_biosequences_on_biosequence_id"
+
+  create_table "bioseqcollections", :force => true do |t|
+    t.string   "identifier"
+    t.string   "source"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bioseqfeatures", :force => true do |t|
+    t.string   "name",           :limit => 32
+    t.string   "value"
+    t.integer  "start"
+    t.integer  "stop"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "biosequence_id"
+  end
+
+  add_index "bioseqfeatures", ["biosequence_id"], :name => "index_bioseqfeatures_on_biosequence_id"
+
+  create_table "biosequences", :force => true do |t|
+    t.string   "identifier",  :limit => 32
+    t.string   "source",      :limit => 32
+    t.string   "title",       :limit => 64
+    t.text     "description"
+    t.text     "seqdata"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
@@ -26,13 +67,36 @@ ActiveRecord::Schema.define(:version => 20100623114900) do
     t.text     "notes"
   end
 
+  create_table "isolatecollection_isolates", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "isolate_id"
+    t.integer  "isolatecollection_id"
+  end
+
+  add_index "isolatecollection_isolates", ["isolate_id"], :name => "index_isolatecollection_isolates_on_isolate_id"
+  add_index "isolatecollection_isolates", ["isolatecollection_id"], :name => "index_isolatecollection_isolates_on_isolatecollection_id"
+
+  create_table "isolatecollections", :force => true do |t|
+    t.string   "identifier"
+    t.string   "source"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "isolates", :force => true do |t|
     t.string   "identifier"
     t.string   "source"
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "serotype"
+    t.string   "host"
+    t.string   "country"
+    t.string   "region"
   end
 
   create_table "users", :force => true do |t|

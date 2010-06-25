@@ -1,5 +1,41 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
+<def tag="form" for="Bioseqcollection">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="identifier, source, title, description, biosequences" param/>
+    <div param="actions">
+      <submit label="#{ht 'bioseqcollections.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Bioseqfeature">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, value, start, stop, biosequence" param/>
+    <div param="actions">
+      <submit label="#{ht 'bioseqfeatures.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Biosequence">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="identifier, source, title, description, seqdata" param/>
+    <div param="actions">
+      <submit label="#{ht 'biosequences.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Contact">
   <form merge param="default">
     <error-messages param/>
@@ -12,10 +48,22 @@
 
 
 
+<def tag="form" for="Isolatecollection">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="identifier, source, title, description, isolates" param/>
+    <div param="actions">
+      <submit label="#{ht 'isolatecollections.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Isolate">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="identifier, source, title, description" param/>
+    <field-list fields="identifier, source, title, description, serotype, host, country, region" param/>
     <div param="actions">
       <submit label="#{ht 'isolates.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

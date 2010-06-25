@@ -1,5 +1,37 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
+<def tag="card" for="Bioseqcollection">
+  <card class="bioseqcollection" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="BioseqcollectionBiosequence">
+  <card class="bioseqcollection-biosequence" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Bioseqfeature">
+  <card class="bioseqfeature" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Biosequence">
+  <card class="biosequence" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="Contact">
   <card class="contact" param="default" merge>
     <header: param>
@@ -12,6 +44,22 @@
   <card class="isolate" param="default" merge>
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Isolatecollection">
+  <card class="isolatecollection" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="IsolatecollectionIsolate">
+  <card class="isolatecollection-isolate" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
     </header:>
   </card>
 </def>

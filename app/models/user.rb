@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
 
   # This gives admin rights to the first sign-up.
   # Just remove it if you don't want that
-  before_create { |user| user.administrator = true if !Rails.env.test? && count == 0 }
+  before_create { |user|
+    user.administrator = true if !Rails.env.test? && count == 0
+  }
 
   
   # --- Signup lifecycle --- #
@@ -58,4 +60,8 @@ class User < ActiveRecord::Base
     true
   end
 
+  def index_permitted?(field)
+    true
+  end
+  
 end

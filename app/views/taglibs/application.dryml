@@ -8,3 +8,72 @@
 
 <def tag="app-name">Weatherman</def>
 
+<def tag="contact-email">bioinformatics@hpa.org.uk</def>
+
+<def tag="contact-name">CfI Bioinformatics Unit</def>
+
+<def tag="contact-link">
+	<a href="mail://bioinformatics@hpa.org.uk"><contact-name /></a>
+</def>
+
+<def tag="nil-view">-</def>
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Isolate"><ht key="isolates.nav_item">Isolates</ht></nav-item>
+    <nav-item with="&Isolatecollection"><ht key="isolatecollections.nav_item">Isolate collections</ht></nav-item>
+    <nav-item with="&Biosequence"><ht key="biosequences.nav_item">Biosequences</ht></nav-item>
+    <nav-item with="&Bioseqcollection"><ht key="bioseqcollections.nav_item">Bioseq collections</ht></nav-item>
+  </navigation>
+</def>
+
+<def tag="show-page" for="Biosequence">
+	<page merge title="#{ht 'biosequences.show.title', :default=>['Biosequence'] }">
+	
+		<body: class="show-page biosequence" param/>
+	
+		<content: param>
+			<header param="content-header">
+				<h2 param="heading">
+					<ht key="biosequences.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+						<name/>
+					</ht>
+				</h2>
+				
+				<record-flags fields="" param/>
+				
+				<a action="edit" if="&can_edit?" param="edit-link">
+					<ht key="biosequences.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+						Edit Biosequence
+					</ht>
+				</a>
+			</header>
+			
+			<section param="content-body">
+				<view:description param="description"/>
+				<field-list fields="identifier, source" param/>
+				
+				<section param="seqdata-section"> 
+					<h3 param="seqdata-heading">Sequence</h3> 
+					ffdhfdghgh 
+				</section>
+				
+				<section param="collection-section"> 
+					<h3 param="feature-heading">Features</h3> 
+					<collection:bioseqfeatures param/> 
+				</section>
+				
+				<section param="collection-section"> 
+					<h3 param="collection-heading">In collections</h3> 
+					<collection:bioseqcollections param/> 
+				</section>
+			
+			</section>
+			
+
+			
+		</content:>
+	
+	</page>
+</def>

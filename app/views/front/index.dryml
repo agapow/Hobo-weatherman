@@ -6,18 +6,27 @@
     <header class="content-header">
       <h1>Welcome to <app-name/></h1>
       <section class="welcome-message">
-        <h3>Congratulations! Your Hobo Rails App is up and running</h3>
-        <ul>
-          <li>To customise this page: edit app/views/front/index.dryml</li>
-        </ul>
     
+        <!-- show only if no admin user exists -->
         <% if User.count == 0 -%>
-          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <h3 style="margin-top: 20px;">There are no user accounts -
+          please provide the details of the site administrator</h3>
           <do with="&User.new"><% this.exempt_from_edit_checks = true %>
             <signup-form/>
           </do>
         <% end -%>
         
+        <% if current_user.guest? -%>
+          <!-- if not logged in, prompt -->
+          <p><a href="&login_url">Login</a> or <a href="&signup_url">signup</a>
+          for an account.</p>
+          
+          <p>Forgotten your password?</p>
+        
+        <% else %>
+          <p>Logged into <app-name /> as <%= current_user.name -%>. </p>
+        
+        <% end -%>
       
       </section>
     </header>
@@ -25,5 +34,10 @@
     <section class="content-body">
     </section>
   </content:>
+  
+  <footer:>
+    ©Health Protection Agency 2010. Direct queries to
+    <contact-link />.
+  </footer:>
   
 </page>

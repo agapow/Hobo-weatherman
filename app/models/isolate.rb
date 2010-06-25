@@ -6,11 +6,17 @@ class Isolate < ActiveRecord::Base
     identifier  :string, :required
     source      :string
     title       :string
-    description :string
+    description :text
+    serotype    :string
+    host        :string
+    country     :string
+    region      :string
     timestamps
   end
 
-
+  has_many :isolatecollections, :through => :isolatecollection_isolates
+  has_many :isolatecollection_isolates, :dependent => :destroy
+  
   # --- Permissions --- #
 
   def create_permitted?
