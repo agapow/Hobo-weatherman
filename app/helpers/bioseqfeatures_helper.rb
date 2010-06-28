@@ -1,0 +1,2 @@
+module BioseqfeaturesHelper
+end

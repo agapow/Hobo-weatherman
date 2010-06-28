@@ -1,0 +1,5 @@
+<!-- can't define tags here? -->
+<show-page> 
+   <field-list: fields = "source, identifier"/>
+	<collection-heading:>In collectionsfdgfd</collection-heading:> 
+</show-page> 
