@@ -3,3 +3,38 @@
 	font-family: monospace;
 	background-color: lightgray;
 }
+
+html, body {
+	background: beige;
+}
+
+div.header.page-header {
+	background: #8c8c8c;
+}
+
+ul.navigation.main-nav li a {
+	background: #f68620 !important;
+}
+
+ul.navigation.main-nav li.current a {
+	background: white !important;
+}
+
+div.content-header {
+	margin: 0px 25px;
+}
+
+div.section.content {
+	background: white;
+	padding-top: 10px !important;
+}
+
+h1.app-name {
+	background-image: url(/images/hpa-logo.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+div.section.welcome-message {
+	background: transparent;
+}
