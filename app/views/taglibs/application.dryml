@@ -16,10 +16,14 @@
 	<a href="mail://bioinformatics@hpa.org.uk"><contact-name /></a>
 </def>
 
-<def tag="footer" attrs="empty">
-  <set body="&parameters.default"/>
-  <div class="footer" merge-attrs if="&!body.blank? || empty">dfsdf<%= body %></div>
-</def>
+<extend tag="page">
+	<old-page merge>
+		<footer: param>
+			&copy;<%= Time.now.year %> Health Protection Agency. Direct queries to
+			<contact-link />.
+		</footer:>
+	</old-page>
+</extend>
 
 <def tag="nil-view">-</def>
 
@@ -34,6 +38,7 @@
   </navigation>
 </def>
 
+
 <def tag="bioseq">
 <%
 =begin
@@ -41,7 +46,7 @@ A partial that renders a nicely formatted biosequence with position numbers.
 
 TODO: is there a microformat comptiable way of doing this? With js?
 TODO: will we need a way of starting from a position other than 0?
-TODO: verbose and non-ruby-ish, might be way to shiorten and quicken?
+TODO: verbose and non-ruby-ish, might be way to shorten and quicken?
 
 =end
 %>
@@ -54,10 +59,10 @@ base_case = 'up'
 show_translate = true
 
 seq_str = this.seqdata
+seq_len = seq_str.length
+line_cnt = (seq_len.to_f() / line_width).ceil()
 
-line_cnt = (seq_str.length.to_f() / line_width).ceil()
-
-left_posns, right_posns = row_numbers (line_width, line_cnt)
+left_posns, right_posns = row_numbers (line_width, line_cnt, :max_index=>seq_len)
 %>
 
 <table class="sequence_layout" cellpadding="0" cellspacing="0">
@@ -77,13 +82,14 @@ left_posns, right_posns = row_numbers (line_width, line_cnt)
 </table>
 
 <% if (show_translate) %>
-  <%
-  aa_str = translate_nucseq(this.seqdata)
-
-  line_cnt = (aa_str.length.to_f() / line_width).ceil()
-
-  left_posns, right_posns = row_numbers (line_width, line_cnt, {:char_width=>3})
-  %>
+	<%
+	aa_str = translate_nucseq(this.seqdata)
+	
+	line_cnt = (aa_str.length.to_f() / line_width).ceil()
+	
+	left_posns, right_posns = row_numbers (line_width, line_cnt, :char_width=>3,
+		:max_index=>seq_len)
+	%>
 
   <h3 class="subtitle">Translation of frame 1</h3>
 
