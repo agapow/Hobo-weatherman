@@ -1,6 +1,6 @@
 <page title="Home">
 
-  <body: class="front-page"/>
+  <body: class="front-page" />
 
   <content:>
     <header class="content-header">
@@ -21,7 +21,7 @@
           <p><a href="&login_url">Login</a> or <a href="&signup_url">signup</a>
           for an account.</p>
           
-          <p>Forgotten your password?</p>
+          <p><a href="/forgot_password">Forgotten your password?</a></p>
         
         <% else %>
           <p>Logged into <app-name /> as <%= current_user.name -%>. </p>
@@ -36,7 +36,7 @@
   </content:>
   
   <footer:>
-    ©Health Protection Agency 2010. Direct queries to
+    &copy;Health Protection Agency 2010. Direct queries to
     <contact-link />.
   </footer:>
   

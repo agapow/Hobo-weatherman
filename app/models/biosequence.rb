@@ -26,19 +26,19 @@ class Biosequence < ActiveRecord::Base
   # --- Permissions --- #
 
   def create_permitted?
-    allow_write_record
+    true
   end
 
   def update_permitted?
-    allow_write_record
+    true
   end
 
   def destroy_permitted?
-    allow_write_record
+    true
   end
 
   def view_permitted?(field)
-    allow_read_record(field)
+    true
   end
 
   def name

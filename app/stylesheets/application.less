@@ -1,0 +1,142 @@
+
+/*** CONSTANTS & DEFINES ***/
+
+@hpa_orange: #f68620;
+
+@header_bg: #8C8c8c;
+
+@notice_bg: khaki;
+@notice_fg: darkgrey;
+@error_bg: #BC1C3D;
+@error_fg: white;
+
+
+/*** RULES ***/
+
+/*** OVERALL LAYOUT */
+
+html, body {
+	background: beige;
+	width: auto;
+}
+
+body {
+	/* border: 1px solid gray; */
+	margin: 0 10px 20px;
+}
+
+
+/*** HEADER ELEMENTS */
+
+/* account/login toolbar */
+.account-nav a {
+	font-weight: normal;
+}
+
+ul.navigation.account-nav li a {
+	color: black !important;
+	opacity: 0.3;
+}
+
+ul.navigation.account-nav li a:hover {
+	opacity: 1.0;
+}
+
+/* page/site header */
+div.header.page-header {
+	background: @header_bg;
+}
+
+h1.app-name {
+	/* TODO: can't get a good transparent version of hpa logo */
+	/* 
+	background-image: url(/images/hpa-logo.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	*/
+	text-align: right;
+}
+
+/* site tabs */
+ul.navigation.main-nav {
+	li a {
+		background: @hpa_orange !important;
+	}
+
+	li.current a {
+		background: white !important;
+	}
+}
+
+/*** CONTENT ELEMENTS */
+
+div.content-header {
+	margin: 0px 25px;
+}
+
+div.section.content {
+	background: white;
+	padding-top: 10px !important;
+	border-style: solid;
+	border-color: @header_bg;
+	border-width: 0 1px 1px;
+}
+
+div.section.welcome-message {
+	background: transparent;
+}
+
+/*** FLASHES & MESSAGES */
+.flash.notice {
+	background: khaki;
+	color: darkgray;
+}
+.flash.error {
+	background: #BC1C3D;
+	color: white;
+}
+
+
+/*** FORM ELEMENTS ***/
+.button {
+	color: white;
+	background: @hpa_orange;
+}
+
+a.edit-link, a.cancel {
+	color: @hpa_orange;
+}
+
+
+/*** SEQUENCE DISPLAY */
+/*
+Table for rendering biosequence within.
+*/
+.sequence_layout {
+	border: thin solid gray;
+	margin: 1em 0em;
+	
+	/*
+	We choose scalable fonts available on most computers. Note that as most browsers
+	have a small size for monospace, the size is boosted slightly.
+	*/
+	td {
+		font-size: 110%;
+		font-family: "Courier New", "Lucida Console", "Andale Mono",
+			"Lucida Sans Typewriter", "Bitstream Vera Sans Mono", Tahoma, monospace;
+		padding: 0.5em;
+	}
+	
+	.sequence {
+		background-color: cornsilk;
+		color: slategray;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+
+/*** FOOTER ELEMENTS ***/
+
+div.footer.page-footer, div.footer.page-footer a {
+	color: darkgray;
+}

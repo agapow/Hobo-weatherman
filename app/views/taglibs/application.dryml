@@ -16,6 +16,11 @@
 	<a href="mail://bioinformatics@hpa.org.uk"><contact-name /></a>
 </def>
 
+<def tag="footer" attrs="empty">
+  <set body="&parameters.default"/>
+  <div class="footer" merge-attrs if="&!body.blank? || empty">dfsdf<%= body %></div>
+</def>
+
 <def tag="nil-view">-</def>
 
 <def tag="main-nav">
@@ -25,8 +30,83 @@
     <nav-item with="&Isolatecollection"><ht key="isolatecollections.nav_item">Isolate collections</ht></nav-item>
     <nav-item with="&Biosequence"><ht key="biosequences.nav_item">Biosequences</ht></nav-item>
     <nav-item with="&Bioseqcollection"><ht key="bioseqcollections.nav_item">Bioseq collections</ht></nav-item>
+    <nav-item href="tools/">Tools</nav-item>
   </navigation>
 </def>
+
+<def tag="bioseq">
+<%
+=begin
+A partial that renders a nicely formatted biosequence with position numbers.
+
+TODO: is there a microformat comptiable way of doing this? With js?
+TODO: will we need a way of starting from a position other than 0?
+TODO: verbose and non-ruby-ish, might be way to shiorten and quicken?
+
+=end
+%>
+
+<%
+## variables for rendering
+start_posn = 1
+line_width = 60
+base_case = 'up'
+show_translate = true
+
+seq_str = this.seqdata
+
+line_cnt = (seq_str.length.to_f() / line_width).ceil()
+
+left_posns, right_posns = row_numbers (line_width, line_cnt)
+%>
+
+<table class="sequence_layout" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="line_numbers left">
+        <pre><%= left_posns %></pre>
+      </td>
+      <td class="sequence">
+        <pre class="dna"><%= format_bioseq (seq_str, {:case=>base_case}) %></pre>
+      </td>
+      <td class="line_numbers right">
+        <pre><%= right_posns %></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% if (show_translate) %>
+  <%
+  aa_str = translate_nucseq(this.seqdata)
+
+  line_cnt = (aa_str.length.to_f() / line_width).ceil()
+
+  left_posns, right_posns = row_numbers (line_width, line_cnt, {:char_width=>3})
+  %>
+
+  <h3 class="subtitle">Translation of frame 1</h3>
+
+  <table class="sequence_layout" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="line_numbers left">
+          <pre><%= left_posns %></pre>
+        </td>
+        <td class="sequence">
+          <pre class="dna"><%= format_bioseq (aa_str, {:case=>base_case}) %></pre>
+        </td>
+        <td class="line_numbers right">
+          <pre><%= right_posns %></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<% end %>
+
+</def>
+
 
 <def tag="show-page" for="Biosequence">
 	<page merge title="#{ht 'biosequences.show.title', :default=>['Biosequence'] }">
@@ -56,7 +136,8 @@
 				
 				<section param="seqdata-section"> 
 					<h3 param="seqdata-heading">Sequence</h3> 
-					ffdhfdghgh 
+					ffdhfdghgh
+					<bioseq />
 				</section>
 				
 				<section param="collection-section"> 
