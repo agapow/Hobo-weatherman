@@ -28,7 +28,8 @@
 
 <%# adapt string inputs to pay attention to size %>
 <extend tag="input" for="string">
-	<% pp "*** #{this.class} #{this} #{this_field.class} #{this_parent.class}" %>
+	<model-column-type /> <model-column-name />
+	<% pp "*** #{this.class} #{this} #{this_field.class} #{this_parent}" %>
   <old-input merge foobar /> 
 </extend>
 
