@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100625150433) do
+ActiveRecord::Schema.define(:version => 20100701112620) do
 
   create_table "bioseqcollection_biosequences", :force => true do |t|
     t.datetime "created_at"
@@ -31,13 +31,11 @@ ActiveRecord::Schema.define(:version => 20100625150433) do
   end
 
   create_table "bioseqfeatures", :force => true do |t|
-    t.string   "name",           :limit => 32
-    t.string   "value"
-    t.integer  "start"
-    t.integer  "stop"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "biosequence_id"
+    t.string  "name",           :limit => 64
+    t.string  "value"
+    t.integer "start"
+    t.integer "stop"
+    t.integer "biosequence_id"
   end
 
   add_index "bioseqfeatures", ["biosequence_id"], :name => "index_bioseqfeatures_on_biosequence_id"
@@ -97,6 +95,12 @@ ActiveRecord::Schema.define(:version => 20100625150433) do
     t.string   "host"
     t.string   "country"
     t.string   "region"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

@@ -72,11 +72,11 @@ ul.navigation.main-nav {
 
 div.content-header {
 	margin: 0px 25px;
+	border-width: 0 !important;
 }
 
 div.section.content {
 	background: white;
-	padding-top: 10px !important;
 	border-style: solid;
 	border-color: @header_bg;
 	border-width: 0 1px 1px;
@@ -86,16 +86,49 @@ div.section.welcome-message {
 	background: transparent;
 }
 
-/*** FLASHES & MESSAGES */
-.flash.notice {
-	background: khaki;
-	color: darkgray;
+p.byline {
+	margin-top: 1em;
+	border-top: 1px dotted black;
+	font-style: italic;	
 }
+
+/*** FLASHES & MESSAGES */
+/*
+Attempts to unify and share the declarations here result in the base formatting
+coming through.
+TODO: investigate generated css.
+*/
+
+.flash {
+	margin-top: 15px;
+}
+
+.flash.notice, .flash.success {
+	background: #DFF2BF;
+	color:  #4F8A10;
+	background-image: url(/images/icons/32/comment.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	padding-left: 48px;
+	border: 1px solid;
+}
+
 .flash.error {
 	background: #BC1C3D;
 	color: white;
+	background-image: url(/images/icons/32/error.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	padding-left: 48px;
+	border: 1px solid #900024;
 }
 
+div.section.error-messages {
+	background-image: url(/images/icons/32/error.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	padding-left: 48px;
+}
 
 /*** FORM ELEMENTS ***/
 .button {
@@ -105,8 +138,21 @@ div.section.welcome-message {
 
 a.edit-link, a.cancel {
 	color: @hpa_orange;
+	:hover {
+		color: white;
+		background: black;
+	}
 }
 
+a.edit-link {
+	margin-top: 20px !important;
+}
+
+h2.heading {
+	border-bottom: 1px dotted black;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
 
 /*** SEQUENCE DISPLAY */
 /*
@@ -139,4 +185,12 @@ Table for rendering biosequence within.
 
 div.footer.page-footer, div.footer.page-footer a {
 	color: darkgray;
+	
+	a {
+		color: darkgray;
+		
+		:hover {
+			color: black;
+		}
+	}
 }

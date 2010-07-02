@@ -206,6 +206,7 @@
 
     <content: param>
           <header param="content-header">
+            <a:biosequence param="parent-link">&laquo; <ht key="bioseqfeatures.actions.back" to="biosequence"><name/></ht></a:biosequence>
             <h2 param="heading">
               <ht key="bioseqfeatures.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
@@ -222,7 +223,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="value, start, stop, biosequence" param/>
+            <field-list fields="value, start, stop" param/>
           </section>
     </content:>
 
@@ -325,6 +326,8 @@
     <body: class="show-page biosequence" param/>
 
     <content: param>
+      <section-group>
+        <section param="main-content">
           <header param="content-header">
             <h2 param="heading">
               <ht key="biosequences.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
@@ -341,10 +344,32 @@
             </a>
           </header>
 
-          <section param="content-body">
+          <section param="content-body" with-flash-messages>
             <view:description param="description"/>
             <field-list fields="identifier, source, title, seqdata" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="biosequences.collection.heading.other" >
+                  Bioseqfeatures
+                </ht>
+              </h3>
+
+              <collection:bioseqfeatures param/>
+            </section>
           </section>
+        </section>
+
+        <aside param>
+          <section param="bioseqcollections-collection-section">
+            <h3 param="bioseqcollections-collection-heading">
+              <ht key="bioseqcollections.collection.heading.other" >
+                Bioseqcollections
+              </ht>
+            </h3>
+            <collection:bioseqcollections  param="bioseqcollections-collection"/>
+          </section>
+        </aside>
+      </section-group>
     </content:>
 
   </page>
@@ -726,6 +751,125 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'isolates.actions.delete', :default=>['Remove This Isolate']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Project Pages ====== -->
+
+<def tag="index-page" for="Project">
+  <page merge title="#{ht 'projects.index.title', :default=>['Projects'] }">
+    <body: class="index-page project" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="projects.index.heading">
+            Projects
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="projects.collection.count" count="&this.size">
+            There <count prefix="are"/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="projects.actions.new">New Project</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Project">
+  <page merge title="#{ht 'projects.new.title', :default=>[' New Project'] }">
+    <body: class="new-page project" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="projects.new.heading">
+            New Project
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'projects.actions.create', :default=>['Create Project']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Project">
+  <page merge title="#{ht 'projects.show.title', :default=>['Project'] }">
+
+    <body: class="show-page project" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="projects.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="projects.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Project
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Project">
+  <page merge title="#{ht 'projects.edit.title', :default=>['Edit Project'] }">
+
+    <body: class="edit-page project" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="projects.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit <type-name/>
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'projects.actions.delete', :default=>['Remove This Project']}" param/>
       </section>
 
       <section param="content-body">

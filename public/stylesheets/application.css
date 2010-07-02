@@ -23,28 +23,67 @@ div.header.page-header { background: #8c8c8c; }
 h1.app-name { text-align: right; }
 ul.navigation.main-nav li a { background: #f68620 !important; }
 ul.navigation.main-nav li.current a { background: white !important; }
-div.content-header { margin: 0px 25px; }
+div.content-header {
+  margin: 0px 25px;
+  border-width: 0 !important;
+}
 div.section.content {
   background: white;
-  padding-top: 10px !important;
   border-style: solid;
   border-color: #8c8c8c;
   border-width: 0 1px 1px;
 }
 div.section.welcome-message { background: transparent; }
-.flash.notice {
-  background: khaki;
-  color: darkgray;
+p.byline {
+  margin-top: 1em;
+  border-top: 1px dotted black;
+  font-style: italic;
+}
+.flash { margin-top: 15px; }
+.flash.notice, .flash.success {
+  background: #dff2bf;
+  color: #4f8a10;
+  background-image: url(/images/icons/32/comment.png);
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  padding-left: 48px;
+  border: 1px solid;
 }
 .flash.error {
   background: #bc1c3d;
   color: white;
+  background-image: url(/images/icons/32/error.png);
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  padding-left: 48px;
+  border: 1px solid #900024;
+}
+div.section.error-messages {
+  background-image: url(/images/icons/32/error.png);
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  padding-left: 48px;
 }
 .button {
   color: white;
   background: #f68620;
 }
-a.edit-link, a.cancel { color: #f68620; }
+a.edit-link { color: #f68620; }
+a.edit-link:hover {
+  color: white;
+  background: black;
+}
+a.cancel { color: #f68620; }
+a.cancel:hover {
+  color: white;
+  background: black;
+}
+a.edit-link { margin-top: 20px !important; }
+h2.heading {
+  border-bottom: 1px dotted black;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
 .sequence_layout {
   border: thin solid gray;
   margin: 1em 0em;
@@ -62,3 +101,7 @@ a.edit-link, a.cancel { color: #f68620; }
 }
 div.footer.page-footer { color: darkgray; }
 div.footer.page-footer a { color: darkgray; }
+div.footer.page-footer a:hover { color: black; }
+div.footer.page-footer a { color: darkgray; }
+div.footer.page-footer a a { color: darkgray; }
+div.footer.page-footer a a:hover { color: black; }

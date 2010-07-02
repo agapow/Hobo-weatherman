@@ -1,2 +1,24 @@
 <!-- can't define tags here? -->
-<show-page /> 
+<show-page>
+	<content-body: with-flash-messages="&false">
+		<%# above is how we suppress messages as they appear in header %>
+		<%# don't show id, src or title as they are in header %>
+
+		<view:description />
+
+		<bioseq />
+		
+		<view:bioseqfeatures>
+			
+		</view:bioseqfeatures>
+		
+		<p class="byline">
+			Created <view:created_at />. Last modified <view:updated_at />.
+		</p>		
+	</content-body:>
+	
+	<aside:>
+		<h2>In collections</h2>	 
+	</aside:>
+	
+</show-page>

@@ -16,6 +16,7 @@
 	<a href="mail://bioinformatics@hpa.org.uk"><contact-name /></a>
 </def>
 
+<%# attach footer to all pages %>
 <extend tag="page">
 	<old-page merge>
 		<footer: param>
@@ -23,6 +24,12 @@
 			<contact-link />.
 		</footer:>
 	</old-page>
+</extend>
+
+<%# adapt string inputs to pay attention to size %>
+<extend tag="input" for="string">
+	<% pp "*** #{this.class} #{this} #{this_field.class} #{this_parent.class}" %>
+  <old-input merge foobar /> 
 </extend>
 
 <def tag="nil-view">-</def>
@@ -62,7 +69,7 @@ seq_str = this.seqdata
 seq_len = seq_str.length
 line_cnt = (seq_len.to_f() / line_width).ceil()
 
-left_posns, right_posns = row_numbers (line_width, line_cnt, :max_index=>seq_len)
+left_posns, right_posns = row_numbers(line_width, line_cnt, :max_index=>seq_len)
 %>
 
 <table class="sequence_layout" cellpadding="0" cellspacing="0">
@@ -72,7 +79,7 @@ left_posns, right_posns = row_numbers (line_width, line_cnt, :max_index=>seq_len
         <pre><%= left_posns %></pre>
       </td>
       <td class="sequence">
-        <pre class="dna"><%= format_bioseq (seq_str, {:case=>base_case}) %></pre>
+        <pre class="dna"><%= format_bioseq(seq_str, {:case=>base_case}) %></pre>
       </td>
       <td class="line_numbers right">
         <pre><%= right_posns %></pre>
@@ -87,11 +94,11 @@ left_posns, right_posns = row_numbers (line_width, line_cnt, :max_index=>seq_len
 	
 	line_cnt = (aa_str.length.to_f() / line_width).ceil()
 	
-	left_posns, right_posns = row_numbers (line_width, line_cnt, :char_width=>3,
+	left_posns, right_posns = row_numbers(line_width, line_cnt, :char_width=>3,
 		:max_index=>seq_len)
 	%>
 
-  <h3 class="subtitle">Translation of frame 1</h3>
+  <p>Translation of frame 1:</p>
 
   <table class="sequence_layout" cellpadding="0" cellspacing="0">
     <tbody>
@@ -100,7 +107,7 @@ left_posns, right_posns = row_numbers (line_width, line_cnt, :max_index=>seq_len
           <pre><%= left_posns %></pre>
         </td>
         <td class="sequence">
-          <pre class="dna"><%= format_bioseq (aa_str, {:case=>base_case}) %></pre>
+          <pre class="dna"><%= format_bioseq(aa_str, {:case=>base_case}) %></pre>
         </td>
         <td class="line_numbers right">
           <pre><%= right_posns %></pre>
@@ -114,53 +121,3 @@ left_posns, right_posns = row_numbers (line_width, line_cnt, :max_index=>seq_len
 </def>
 
 
-<def tag="show-page" for="Biosequence">
-	<page merge title="#{ht 'biosequences.show.title', :default=>['Biosequence'] }">
-	
-		<body: class="show-page biosequence" param/>
-	
-		<content: param>
-			<header param="content-header">
-				<h2 param="heading">
-					<ht key="biosequences.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
-						<name/>
-					</ht>
-				</h2>
-				
-				<record-flags fields="" param/>
-				
-				<a action="edit" if="&can_edit?" param="edit-link">
-					<ht key="biosequences.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-						Edit Biosequence
-					</ht>
-				</a>
-			</header>
-			
-			<section param="content-body">
-				<view:description param="description"/>
-				<field-list fields="identifier, source" param/>
-				
-				<section param="seqdata-section"> 
-					<h3 param="seqdata-heading">Sequence</h3> 
-					ffdhfdghgh
-					<bioseq />
-				</section>
-				
-				<section param="collection-section"> 
-					<h3 param="feature-heading">Features</h3> 
-					<collection:bioseqfeatures param/> 
-				</section>
-				
-				<section param="collection-section"> 
-					<h3 param="collection-heading">In collections</h3> 
-					<collection:bioseqcollections param/> 
-				</section>
-			
-			</section>
-			
-
-			
-		</content:>
-	
-	</page>
-</def>

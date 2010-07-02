@@ -3,11 +3,10 @@ class Bioseqfeature < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    name  :string, :required, :limit => 32
+    name  :string, :required, :limit => 64
     value :string, :required
     start :integer
     stop  :integer
-    timestamps
   end
 
   belongs_to :biosequence

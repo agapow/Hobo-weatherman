@@ -134,7 +134,6 @@ module ApplicationHelper
 			:start_posn => 1,
 			:max_index => false,
 		}.merge(options)
-		pp options
 		
 		## Main:
 		posn_width = (line_cnt * line_width * options[:char_width]).to_s.length()
@@ -145,12 +144,12 @@ module ApplicationHelper
 				options[:start_posn]]
 		}.join("\n")
 		
+		# so the last righthand figure is set to something sensible
 		if options[:max_index]
 			max_right_posn = options[:max_index]
 		else
 			max_right_posn = line_cnt * line_width * options[:char_width]
 		end
-		pp max_right_posn
 		right_posns = line_range.map { |e|
 			"%*s" % [posn_width, [((e+1)* line_width * options[:char_width]) +
 				(options[:start_posn] - options[:char_width]), max_right_posn].min()]

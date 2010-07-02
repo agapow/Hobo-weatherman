@@ -27,7 +27,7 @@
 <def tag="form" for="Biosequence">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="identifier, source, title, description, seqdata" param/>
+    <field-list fields="identifier, source, title, description, seqdata, bioseqfeatures" param/>
     <div param="actions">
       <submit label="#{ht 'biosequences.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -66,6 +66,18 @@
     <field-list fields="identifier, source, title, description, serotype, host, country, region" param/>
     <div param="actions">
       <submit label="#{ht 'isolates.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Project">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name" param/>
+    <div param="actions">
+      <submit label="#{ht 'projects.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
