@@ -119,7 +119,7 @@ class Biosequence < ActiveRecord::Base
 				self.identifier = identifier.strip()	
 			end
 			# trim, squish and downcase sequence data
-			self.seqdata = seqdata.strip.downcase.gsub(/\s+/, '')
+			self.seqdata = seqdata.strip.downcase.gsub(/\s+/, '').gsub('?', 'n')
 			# trim text fields
 			self.title = title.strip()
 			self.source = source.strip()

@@ -8,15 +8,16 @@
 
 		<bioseq />
 		
-		<view:bioseqfeatures>
-			
-		</view:bioseqfeatures>
-		
+		<view:bioseqfeatures />
+
 		<p class="byline">
 			Created <view:created_at />. Last modified <view:updated_at />.
 		</p>		
 	</content-body:>
 	
+	<collection-heading:>Features</collection-heading:>
+
+
 	<aside:>
 		<h2>In collections</h2>	 
 	</aside:>

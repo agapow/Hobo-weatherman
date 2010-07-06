@@ -194,3 +194,16 @@ div.footer.page-footer, div.footer.page-footer a {
 		}
 	}
 }
+
+
+/* add icon of appropriate type to link */
+a[href$='.doc'] {
+ padding:0 20px 0 0;
+ background:transparent url(/graphics/icons/doc.gif) no-repeat center right;
+}
+
+/* all clickable things have the pointer cursor */
+input[type=submit],label,select,.pointer { cursor:pointer; }
+
+/* highlight the input field currently in focus, does not work in IE */
+
