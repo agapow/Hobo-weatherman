@@ -4,4 +4,5 @@ class UsersController < ApplicationController
 
   auto_actions :all
 
+  # TODO: make new only open to admin
 end
