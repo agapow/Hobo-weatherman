@@ -16,6 +16,17 @@
 	<a href="mail://bioinformatics@hpa.org.uk"><contact-name /></a>
 </def>
 
+<def tag="nil-view">-</def>
+
+
+<%# attach a created/altered time footer to content %>
+<def tag="byline">
+	<p class="byline">
+		Created <view:created_at />. Last modified <view:updated_at />.
+	</p>	
+</def>
+
+
 <%# attach footer to all pages %>
 <extend tag="page">
 	<old-page merge>
@@ -26,6 +37,7 @@
 	</old-page>
 </extend>
 
+
 <%# adapt string inputs to pay attention to size %>
 <extend tag="input" for="string">
 	<model-column-type /> 
@@ -33,17 +45,20 @@
   <old-input merge foobar /> 
 </extend>
 
-<def tag="nil-view">-</def>
+
+
+
 
 <def tag="main-nav">
-  <navigation class="main-nav" merge-attrs param="default">
-    <nav-item href="#{base_url}/">Home</nav-item>
-    <nav-item with="&Isolate"><ht key="isolates.nav_item">Isolates</ht></nav-item>
-    <nav-item with="&Isolatecollection"><ht key="isolatecollections.nav_item">Isolate collections</ht></nav-item>
-    <nav-item with="&Biosequence"><ht key="biosequences.nav_item">Biosequences</ht></nav-item>
-    <nav-item with="&Bioseqcollection"><ht key="bioseqcollections.nav_item">Bioseq collections</ht></nav-item>
-    <nav-item href="tools/">Tools</nav-item>
-  </navigation>
+	<navigation class="main-nav" merge-attrs param="default">
+		<nav-item href="#{base_url}/">Home</nav-item>
+		<nav-item with="&User"><ht key="users.nav_item">Users</ht></nav-item>
+		<nav-item with="&Isolate"><ht key="isolates.nav_item">Isolates</ht></nav-item>
+		<nav-item with="&Isolatecollection"><ht key="isolatecollections.nav_item">Isolate collections</ht></nav-item>
+		<nav-item with="&Biosequence"><ht key="biosequences.nav_item">Biosequences</ht></nav-item>
+		<nav-item with="&Bioseqcollection"><ht key="bioseqcollections.nav_item">Bioseq collections</ht></nav-item>
+		<nav-item href="tools/">Tools</nav-item>
+	</navigation>
 </def>
 
 

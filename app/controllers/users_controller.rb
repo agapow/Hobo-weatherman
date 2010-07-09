@@ -4,5 +4,21 @@ class UsersController < ApplicationController
 
   auto_actions :all
 
-  # TODO: make new only open to admin
+	# --- Permissions --- #
+
+	def create_permitted?
+	 acting_user.administrator? 
+	end
+
+	def update_permitted?
+		acting_user.administrator? 
+	end
+
+	def destroy_permitted?
+	 acting_user.administrator? 
+	end
+
+	def view_permitted?(field)
+		acting_user.administrator? 
+	end
 end

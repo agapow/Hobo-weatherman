@@ -906,6 +906,9 @@
       </header>
 
       <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="users.actions.new">New User</ht>
+        </a>
 
         <page-nav param="top-page-nav"/>
 
