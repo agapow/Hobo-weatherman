@@ -36,6 +36,21 @@ module ApplicationHelper
 		allow_read_global
 	end
 
+	# When called with a model instance and a string field (not field name),
+	# return the limit (size/width) of the field. Return nil if none set.
+	#
+	def string_field_limit(instance, field_name)
+		return instance.class.field_specs[field_name].options[:limit]
+	end
+	
+	# When called with a model instance and the name of a text field, return the
+	# rows set in viewhints. Return nil if none set.
+	#
+	def text_field_rows(instance, field_name)
+		pp instance.class.view_hints.rows
+		return instance.class.view_hints.rows[field_name]
+	end
+	
 	# Layout a biosequence appropriate for display within HTML.
 	#
 	# [seq_str] the biosequence to be formatted, as a string

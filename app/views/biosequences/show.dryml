@@ -10,9 +10,11 @@
 		
 		<% if (0 < this.bioseqfeatures.length) %>
 			<h2>Features</h2>
-			<collection:bioseqfeatures>
-				<view:name/>
-			</collection:bioseqfeatures>	
+				<collection:bioseqfeatures>
+					<b><view:name/> (<view:start/>-<view:stop/>):</b>
+						<view:value/>
+				</collection:bioseqfeatures>	
+
 		<% end %>
 		
 		<byline />

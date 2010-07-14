@@ -40,13 +40,38 @@
 
 <%# adapt string inputs to pay attention to size %>
 <extend tag="input" for="string">
-	<model-column-type /> 
-	<% pp "*** #{this.class} #{this} #{this_field.class} #{this_parent}" %>
-  <old-input merge foobar /> 
+	<%
+		max_width = string_field_limit(this_parent,this_field)
+		if (max_width.nil?)
+	%>
+		<old-input />
+	<%
+		else
+	%>
+		<old-input merge size="&max_width" maxlength="&max_width" />
+	<%
+		end
+	%>
 </extend>
 
-
-
+<%# adapt text inputs to pay attention to suggested row count %>
+<!--
+this obliterates the attributes of the textarea tag, dunno why
+<extend tag="input" for="text">
+	<%
+		row_cnt = text_field_rows(this_parent,this_field)
+		if (row_cnt.nil?)
+	%>
+		<old-input />
+	<%
+		else
+	%>
+		<old-input />
+	<%
+		end
+	%>
+</extend>
+-->
 
 
 <def tag="main-nav">

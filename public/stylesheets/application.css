@@ -21,7 +21,12 @@ ul.navigation.account-nav li a {
 ul.navigation.account-nav li a:hover { opacity: 1; }
 div.header.page-header { background: #8c8c8c; }
 h1.app-name { text-align: right; }
-ul.navigation.main-nav li a { background: #f68620 !important; }
+ul.navigation.main-nav { padding-left: 15px; }
+ul.navigation.main-nav li { margin-right: 5px; }
+ul.navigation.main-nav li a {
+  background: #f68620 !important;
+  font-size: 120%;
+}
 ul.navigation.main-nav li.current a { background: white !important; }
 div.content-header {
   margin: 0px 25px;
@@ -84,6 +89,12 @@ h2.heading {
   margin-bottom: 5px;
   padding-bottom: 5px;
 }
+div.input-many-item {
+  border: 1px solid gray;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+}
+input.string { width: auto !important; }
 .sequence_layout {
   border: thin solid gray;
   margin: 1em 0em;

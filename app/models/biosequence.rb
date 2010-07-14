@@ -128,4 +128,13 @@ class Biosequence < ActiveRecord::Base
 			return true
 		end
 		
+		def validate
+			uniq_seq_chars = seqdata.split("").uniq()
+			illegal_seq_chars = uniq_seq_chars - WeathermanDefs::IUPAC_DNA_CHARLIST
+			if not illegal_seq_chars.empty?
+				errors.add(:seqdata,
+					"data contains non-IUPAC symbols: #{illegal_seq_chars.join('')}")
+			end
+		end
+		
 end

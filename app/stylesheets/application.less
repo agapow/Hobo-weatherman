@@ -58,9 +58,24 @@ h1.app-name {
 }
 
 /* site tabs */
+/*
+Controlling the size and space occupied by the site-tabs is done in 3 places:
+
+1. altering the space on it's left (padding-left) which defaults to 30px
+2. altering the font-size, default 13px, which alters tabs around it
+3. altering space between tabs (margin-right), default 10px
+
+*/
 ul.navigation.main-nav {
+	padding-left: 15px;
+	
+	li {
+		margin-right: 5px;	
+	}
+	
 	li a {
 		background: @hpa_orange !important;
+		font-size: 120%;
 	}
 
 	li.current a {
@@ -152,6 +167,17 @@ h2.heading {
 	border-bottom: 1px dotted black;
 	margin-bottom: 5px;
 	padding-bottom: 5px;
+}
+
+
+div.input-many-item {
+	border: 1px solid gray;
+	padding: 0.5em 1.0em;
+	margin-bottom: 0.5em;
+}
+
+input.string {
+	width: auto !important;
 }
 
 /*** SEQUENCE DISPLAY */

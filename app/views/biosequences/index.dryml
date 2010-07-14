@@ -1,7 +1,8 @@
 <index-page> 
-	<collection: replace> 
-		<div> 
-			<table-plus fields="this, identifier,title"/> 
-		</div> 
+	<collection: replace>
+		<table-plus fields="this, description, seqdata.length">
+			<empty-message:>No biosequences match your criteria.</empty-message:>
+			
+		</table-plus> 
 	</collection:> 
 </index-page> 
