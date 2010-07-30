@@ -1,15 +1,6 @@
-class BiosequenceHints < Hobo::ViewHints
-	# NOTE: there can only be a single call to field_help, field_names etc.
-	# Otherwise only the last call of each will have any effect.
-	
-	# After the initial call, you can treat each call as a dictionary, e.g.
-	#
-	#    field_help[:source] = "hata"
-	
-	# You can include hints for non-existent fields "foo"
-	
-	# Attempts to set this crap in a single base class have failed.
-	
+
+class BiosequenceHints < ExtendedViewHints
+
 	field_names ({
 		:seqdata => "Sequence",
 	})
@@ -26,17 +17,14 @@ class BiosequenceHints < Hobo::ViewHints
 		:title => "A user-friendly name for the record that will appear
 			in all listings.",
 		:description => "A summary of the record and its content.",
-		:foo => "hwtw is this",
 	})
-
-	# induce my own view hint fields
-	self.setter (:rows,
-		{
-			:description => 3,
-			:seqdata => 6,
-		}
-	)
+	
+	rows ({
+		:description => 5,
+		:seqdata => 7,
+	})
 	
 	children :bioseqfeatures, :bioseqcollections
-end
 
+	set_defaults	
+end

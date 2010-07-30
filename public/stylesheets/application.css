@@ -21,11 +21,12 @@ ul.navigation.account-nav li a {
 ul.navigation.account-nav li a:hover { opacity: 1; }
 div.header.page-header { background: #8c8c8c; }
 h1.app-name { text-align: right; }
-ul.navigation.main-nav { padding-left: 15px; }
+ul.navigation.main-nav { padding-left: 25px; }
 ul.navigation.main-nav li { margin-right: 5px; }
 ul.navigation.main-nav li a {
   background: #f68620 !important;
-  font-size: 120%;
+  font-size: 100%;
+  padding: 3px 8px 4px;
 }
 ul.navigation.main-nav li.current a { background: white !important; }
 div.content-header {
@@ -94,7 +95,16 @@ div.input-many-item {
   padding: 0.5em 1em;
   margin-bottom: 0.5em;
 }
-input.string { width: auto !important; }
+input.string, input[type=text] {
+  width: auto !important;
+  background: white url(http://158.119.147.40:8080/hobothemes/clean/images/fieldbg.gif) repeat-x 50% 0%;
+  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #c3c3c3;
+  border-right: 1px solid #c3c3c3;
+  border-top: 1px solid #7c7c7c;
+  cursor: auto;
+  font-size: 13px;
+}
 .sequence_layout {
   border: thin solid gray;
   margin: 1em 0em;

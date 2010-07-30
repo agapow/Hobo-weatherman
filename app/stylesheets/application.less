@@ -57,17 +57,18 @@ h1.app-name {
 	text-align: right;
 }
 
-/* site tabs */
+/* SITE TABS */
 /*
 Controlling the size and space occupied by the site-tabs is done in 3 places:
 
-1. altering the space on it's left (padding-left) which defaults to 30px
+1. altering the space on its left (padding-left) which defaults to 30px
 2. altering the font-size, default 13px, which alters tabs around it
 3. altering space between tabs (margin-right), default 10px
+4. altering the padding on `li a`.
 
 */
 ul.navigation.main-nav {
-	padding-left: 15px;
+	padding-left: 25px;
 	
 	li {
 		margin-right: 5px;	
@@ -75,7 +76,8 @@ ul.navigation.main-nav {
 	
 	li a {
 		background: @hpa_orange !important;
-		font-size: 120%;
+		font-size: 100%;
+		padding: 3px 8px 4px;
 	}
 
 	li.current a {
@@ -176,8 +178,15 @@ div.input-many-item {
 	margin-bottom: 0.5em;
 }
 
-input.string {
+input.string, input[type=text] {
 	width: auto !important;
+	background: white url(http://158.119.147.40:8080/hobothemes/clean/images/fieldbg.gif) repeat-x 50% 0%;
+	border-bottom: 1px solid #DDD;
+	border-left: 1px solid #C3C3C3;
+	border-right: 1px solid #C3C3C3;
+	border-top: 1px solid #7C7C7C;
+	cursor: auto;
+	font-size: 13px;
 }
 
 /*** SEQUENCE DISPLAY */
