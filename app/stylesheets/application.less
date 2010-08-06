@@ -180,14 +180,41 @@ div.input-many-item {
 
 input.string, input[type=text] {
 	width: auto !important;
-	background: white url(http://158.119.147.40:8080/hobothemes/clean/images/fieldbg.gif) repeat-x 50% 0%;
+	// TODO; get rid of this & chnage to relative url
+	background: white
+		url(http://158.119.147.40:8080/hobothemes/clean/images/fieldbg.gif)
+		repeat-x 50% 0%;
 	border-bottom: 1px solid #DDD;
 	border-left: 1px solid #C3C3C3;
 	border-right: 1px solid #C3C3C3;
 	border-top: 1px solid #7C7C7C;
 	cursor: auto;
-	font-size: 13px;
+	font-size: 100%;
+	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue',
+		Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	color: #555;
+	padding: 0px 2px;
 }
+
+textarea.text {
+	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue',
+		Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	color: #555;
+	padding: 0px 2px;
+	height: 100px;
+}
+
+textarea.seqdata-tag {
+	font-family: monospace !important;	
+	font-weight: normal;
+	color: #555;
+	padding: 0px 2px;
+	height: 200px;
+}
+
+
 
 /*** SEQUENCE DISPLAY */
 /*

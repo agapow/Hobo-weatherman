@@ -103,7 +103,25 @@ input.string, input[type=text] {
   border-right: 1px solid #c3c3c3;
   border-top: 1px solid #7c7c7c;
   cursor: auto;
-  font-size: 13px;
+  font-size: 100%;
+  font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #555555;
+  padding: 0px 2px;
+}
+textarea.text {
+  font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #555555;
+  padding: 0px 2px;
+  height: 100px;
+}
+textarea.seqdata-tag {
+  font-family: monospace !important;
+  font-weight: normal;
+  color: #555555;
+  padding: 0px 2px;
+  height: 200px;
 }
 .sequence_layout {
   border: thin solid gray;

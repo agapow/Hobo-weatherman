@@ -156,7 +156,17 @@ left_posns, right_posns = row_numbers(line_width, line_cnt, :max_index=>seq_len)
       </tr>
     </tbody>
   </table>
-
+  
+	<% form_remote_tag :url => "/biosequences", :method => :post do %>
+		<input type="text" name="task[name]"/>
+	<% end %>
+	
+  <select onchange="location.href = '/dev/set_current_user?login=' + encodeURIComponent(this.options[this.selectedIndex].value)"> 
+    
+    <option value="">Guest</option> 
+    <option value="paul-michael.agapow@hpa.org.uk" selected="selected">paul-michael.agapow@hpa.org.uk</option> 
+  </select>
+  
 <% end %>
 
 </def>

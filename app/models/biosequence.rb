@@ -48,7 +48,6 @@ class Biosequence < ActiveRecord::Base
 	
 	#before_validation :clean_fields
 	
-
 	# --- Permissions --- #
 
 	def create_permitted?
@@ -67,16 +66,18 @@ class Biosequence < ActiveRecord::Base
 		true
 	end
 
-		def clean_seqdata(raw_val)
-			clean_data = raw_val.strip.downcase.gsub(/\s+/, '').gsub('?', 'n')
-			uniq_seq_chars = clean_data.split("").uniq()
-			illegal_seq_chars = uniq_seq_chars - WeathermanDefs::IUPAC_DNA_CHARLIST
-			if not illegal_seq_chars.empty?
-				raise(ArgumentError,
-					"data contains non-IUPAC symbols: #{illegal_seq_chars.join('')}")
-			end
-			return clean_data
+	# --- Validators --- #
+	
+	def clean_seqdata(raw_val)
+		clean_data = raw_val.strip.downcase.gsub(/\s+/, '').gsub('?', 'n')
+		uniq_seq_chars = clean_data.split("").uniq()
+		illegal_seq_chars = uniq_seq_chars - WeathermanDefs::IUPAC_DNA_CHARLIST
+		if not illegal_seq_chars.empty?
+			raise(ArgumentError,
+				"data contains non-IUPAC symbols: #{illegal_seq_chars.join('')}")
 		end
+		return clean_data
+	end
 		
 	include PrimaryObjModel
 end

@@ -6,6 +6,32 @@
 # methods (identifier, description, name). For efficacy, they are gathered here.
 #
 module PrimaryObjModel
+
+	# --- Permissions --- #
+	def read_permitted?
+		true
+	end
+
+	def write_permitted?
+		true
+	end
+	
+	def create_permitted?
+		write_permitted?
+	end
+
+	def update_permitted?
+		write_permitted?
+	end
+
+	def destroy_permitted?
+		write_permitted?
+	end
+
+	def view_permitted?(field)
+		read_permitted?
+	end
+	
 	
 	def source_id
 		return "#{source.blank? ? '' : source + ':'}#{identifier}"
@@ -45,6 +71,8 @@ module PrimaryObjModel
 	def short_name
 		return title || source_id()
 	end
+	
+	
 	
 	protected
 	
