@@ -74,15 +74,35 @@ div.section.error-messages {
   color: white;
   background: #f68620;
 }
-a.edit-link { color: #f68620; }
+a.edit-link {
+  color: #f68620;
+  border: 1px solid #f68620;
+  padding: 0px 2px;
+}
 a.edit-link:hover {
   color: white;
   background: black;
+  border-color: black;
 }
-a.cancel { color: #f68620; }
+a.new-link {
+  color: #f68620;
+  border: 1px solid #f68620;
+  padding: 0px 2px;
+}
+a.new-link:hover {
+  color: white;
+  background: black;
+  border-color: black;
+}
+a.cancel {
+  color: #f68620;
+  border: 1px solid #f68620;
+  padding: 0px 2px;
+}
 a.cancel:hover {
   color: white;
   background: black;
+  border-color: black;
 }
 a.edit-link { margin-top: 20px !important; }
 h2.heading {

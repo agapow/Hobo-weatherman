@@ -28,6 +28,8 @@ class Biosequence < ActiveRecord::Base
 
 	hobo_model # Don't put anything above this
 
+	include PrimaryObjModel
+	
 	fields do
 		identifier  :string, :limit => 32
 		source		:string, :limit => 32
@@ -79,5 +81,4 @@ class Biosequence < ActiveRecord::Base
 		return clean_data
 	end
 		
-	include PrimaryObjModel
 end

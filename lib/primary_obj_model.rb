@@ -33,6 +33,44 @@ module PrimaryObjModel
 	end
 	
 	
+	# --- Associations --- #
+	
+	    def timestampsdfdsfg
+      field(:created_at, :datetime)
+      field(:updated_at, :datetime)
+    end
+
+	def contains_list_of (association_id, options={})
+		defaults = {
+			:accessible => true,
+			:dependent => :destroy
+		}.update(options)
+		has_many(association_id, defaults)
+	end
+	
+	def belongs_to_list_in(association_id, options={})
+		belongs_to(association_id, options)
+	end
+	
+	# Automagically make set up correct relationships with collection table.
+	#
+	def is_collectable()
+		item_name = table_name
+		collection_table = "#{item_name}collections"
+		through_table = "#{collection_table}_#{item_name}s".to_sym()
+		has_many(collection_table.to_sym(), :through=>through_table)
+		has_many(through_table, :dependent=>:destroy)
+	end
+	
+	def is_collection()
+		item_name = classname.split.downcase()
+		collection_table = "#{name}collections"
+		through_table = "#{collection_table}_#{item_name}".to_sym()
+		has_many(item_name, :through=>through_table, :accessible=>true)
+		has_many(through_table, :dependent=>:destroy)
+	end
+		
+	# --- Naming & identifiers --- #
 	def source_id
 		return "#{source.blank? ? '' : source + ':'}#{identifier}"
 	end
